@@ -1,0 +1,59 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    h3 {
+        color: #333;
+        margin-top: 20px;
+    }
+
+    h5 {
+        color: #333;
+    }
+
+    ol {
+        padding-left: 0;
+    }
+</style>
+
+<%console.log("i m here");%>
+<h1><%=admin.username%></h1>
+<h3>Employees</h3>
+<button  onclick="location.href = '/api/employeeManagement/addEmployee/<%=admin._id%>';">Add New Employee</button>
+<%if (employees){%>
+
+<%employees.forEach((employee)=>{%>
+
+<h5><%=employee.name%></h5>
+
+<button onclick="location.href = '/api/employeeManagement/removeEmployee/<%=employee._id%>/<%=admin._id%>';">Remove</button>
+<button onclick="location.href = '/api/employeeManagement/renderUpdateEmployee/<%=employee._id%>/<%=admin._id%>';">Update</button>
+<button onclick="location.href = '/api/employeeManagement/viewEmployee/<%=employee._id%>/<%=admin._id%>';">View</button>
+<button onclick="location.href = '/api/employeeManagement/renderAssignReview/<%=employee._id%>/<%=admin._id%>';">assign any Review</button>
+<%})%>
+<%}%>
+
+

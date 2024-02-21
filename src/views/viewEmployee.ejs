@@ -1,0 +1,45 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    h3 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    h5 {
+        color: #333;
+        margin-top: 20px;
+    }
+
+    ol {
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    li h6 {
+        margin-bottom: 5px;
+    }
+</style>
+<h3><%=employees.employeeName%></h3>
+
+<h5>Performnace Reviews</h5>
+
+<ol>
+    <%employees.data.forEach((data) => {%>
+     <li> 
+    <h6>Review By: <%=data[0]%></h6>
+    <%=data[1]%>
+
+    </li>  
+    
+    <%})%>
+
+</ol>
